@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Bob Myers">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Win98; U) [Netscape]">
+   <title>Example Links</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h1>Java Console I/O and Code Examples</h1>
+
+<h2>Console Output</h2>
+
+<ul>
+<li><tt>System.out</tt> -- <tt>out</tt> is a <tt>PrintStream</tt> object,
+a static data member of class <tt>System</tt>.  This represents
+standard output</li>
+
+<li>Use this object to call functions <tt>print</tt>, <tt>println</tt>,
+and even <tt>printf</tt>
+ <ul>
+ <li><tt>print()</tt> -- converts parameter to a string (if not already
+    one) and prints it out</li>
+ <li><tt>println()</tt> -- prints parameter, and also prints a newline
+    after</li>
+ <li><tt>printf</tt> -- works like in C programming.  Formatted string,
+    followed by parameters to "fill in the blanks"</li>
+ </ul>
+</li>
+
+<li>Sample calls:
+<pre>
+  System.out.print("Hello, World");	// no newline
+  System.out.println("Hello\n\nWorld"); // adds newline at end
+
+  int feet = 6, inches = 3;
+  System.out.printf("I am %d feet and %d inches tall\n", feet, inches);
+  // just like printf in C
+</pre>
+</li>
+
+<li>If the + operator is used with at least one string operand, then the
+operation is string concatenation.  Other types will be auto-converted to
+type string if needed:
+<pre>
+  System.out.print("The number of states in the U.S. is " + 50);
+
+  int sides = 8;
+  System.out.println("Number of sides on a stop sign = " + sides);
+</pre>
+</li>
+
+</ul>
+
+<h3>Example links</h3>
+
+<ul>
+<li><a href="examples/basics/Example1.java"><tt>Example1.java</tt></a>
+ - Illustrates basic console output</li>
+
+<li><a href="examples/basics/Cat.java"><tt>Cat.java</tt></a>
+ - Basic string concatenation</li>
+
+<li><a href="examples/basics/Cat2.java"><tt>Cat2.java</tt></a>
+ - Be careful about string concatenation vs. regular use of + operator.
+   The order of operations matters!</li>
+</ul>
+
+<h3>Special:  Formatting with <tt>printf</tt></h3>
+
+<ul>
+<li>When printing values with decimal precision (type <tt>float</tt> or
+type <tt>double</tt>), it is often useful to be able to specify how many
+decimal places should be printed</li>
+
+<li>Since Java 1.5.0, the C-style <tt>printf</tt> function has been
+available, and it provides an easy way to format decimal precision</li>
+
+<li>Format of <tt>printf</tt> calls:
+<pre>
+  System.out.printf(<i>format string</i>, <i>list of parameters</i>);
+</pre>
+</li>
+
+<li>The format string is a string in quotes, with special format symbols
+inserted:
+ <ul>
+ <li><tt>%d</tt> specifies an integer</li>
+ <li><tt>%c</tt> specifies a character</li>
+ <li><tt>%s</tt> specifies a String</li>
+ <li><tt>%f</tt> specifies a floating point type</li>
+ </ul>
+</li>
+
+<li>Consider the format symbols to be "fill-in-the-blanks" spots in the
+format string.  These are filled in with the list of parameters</li>
+
+<li>Example:
+<pre>
+  int numStudents = 25;
+  char letterGrade = 'A';
+  double gpa = 3.95;
+
+  System.out.printf("There are %d students\n", numStudents);
+  System.out.printf("Bobby's course grade was %c, and his GPA is %f\n",
+                    letterGrade, gpa);
+
+  // The output from this example is:
+  //   There are 25 students
+  //   Bobby's course grade was A, and his GPA is 3.950000
+</pre>
+</li>
+
+<li>To specify how many decimal places for the output of a floating point
+value, modify the <tt>%f</tt> symbol in this format:
+<pre>
+  %<b>.N</b>f  // where N is the number of decimal places to print
+</pre>
+</li>
+
+<li>Example:
+<pre>
+  double gpa = 3.275;
+  double PI = 3.1415;
+
+  System.out.printf("gpa = %.2f", gpa);
+  System.out.printf("PI = %.3f", PI);
+
+  // Output is:
+  //    gpa = 3.28
+  //    PI = 3.142
+</pre>
+</li>
+
+</ul>
+
+<hr>
+
+<h2>Console Input</h2>
+
+<ul>
+<li>Before Java version 1.5.0, console input was harder.  Since 1.5.0, we
+have the <tt>Scanner</tt> class</li>
+
+<li>class
+<a href="http://java.sun.com/javase/6/docs/api/java/util/Scanner.html">
+<tt>Scanner</tt></a> is a text parser. Contains easy
+methods for grabbing different types of input</li>
+
+<li><tt>System.in</tt> is an <tt>InputStream</tt> object that represents
+standard input</li>
+
+<li>To use Scanner to read from standard input...
+ <ol>
+ <li>Put the appropriate <tt>import</tt> statement at the top of the
+ file: <pre>import java.util.Scanner;</pre></li>
+ <li>Create a <tt>Scanner</tt> object</li>
+ <li>Pass in <tt>System.in</tt> into the <tt>Scanner</tt> constructor,
+     when creating the object</li>
+ </ol>
+</li>
+
+<li>Example:
+<pre>
+  import java.util.Scanner;
+  // yadda yadda
+
+  Scanner input = new Scanner(System.in);
+
+  // now we can use the object to read data from the keyboard.
+  // Some sample calls:
+  int x = input.nextInt();
+  double y = input.nextDouble();
+  String s = input.next();
+</pre>
+</li>
+
+</ul>
+
+<h3>Examples:</h3>
+
+<ul>
+<li><a href="examples/basics/ConsoleInput1.java">
+    <tt>ConsoleInput1.java</tt></a>
+ - A program demonstrating simple I/O with integers and strings</li>
+
+<li><a href="examples/basics/Arithmetic.java"><tt>Arithmetic.java</tt></a>
+ - Illustrates some input and the arithmetic operations</li>
+
+<li><a href="examples/basics/Functions1.java"><tt>Functions1.java</tt></a>
+ - Illustrates some input and a few static functions</li>
+
+</ul>
+
+<hr>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Bob Myers">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Win98; U) [Netscape]">
+   <title>Exampleway Inkslay</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h1>Avajay Onsolecay Iway/Oway andway Odecay Examplesway</h1>
+
+<h2>Onsolecay Outputway</h2>
+
+<ul>
+<li><tt>Ystemsay.outway</tt> -- <tt>outway</tt> isway away <tt>IntStreampray</tt> objectway,
+away aticstay ataday embermay ofway assclay <tt>Ystemsay</tt>.  Isthay epresentsray
+andardstay outputway</li>
+
+<li>Useway isthay objectway otay allcay unctionsfay <tt>intpray</tt>, <tt>intlnpray</tt>,
+andway evenway <tt>intfpray</tt>
+ <ul>
+ <li><tt>intpray()</tt> -- onvertscay arameterpay otay away ingstray (ifway otnay alreadyway
+    oneway) andway intspray itway outway</li>
+ <li><tt>intlnpray()</tt> -- intspray arameterpay, andway alsoway intspray away ewlinenay
+    afterway</li>
+ <li><tt>intfpray</tt> -- orksway ikelay inway C ogrammingpray.  Ormattedfay ingstray,
+    ollowedfay ybay arameterspay otay "illfay inway ethay anksblay"</li>
+ </ul>
+</li>
+
+<li>Amplesay allscay:
+<pre>
+  Ystemsay.outway.intpray("Ellohay, Orldway");	// onay ewlinenay
+  Ystemsay.outway.intlnpray("Ellohay\n\orldnWay"); // addsway ewlinenay atway endway
+
+  intway eetfay = 6, inchesway = 3;
+  Ystemsay.outway.intfpray("Iway amway %d eetfay andway %d inchesway alltay\n", eetfay, inchesway);
+  // ustjay ikelay intfpray inway C
+</pre>
+</li>
+
+<li>Ifway ethay + operatorway isway usedway ithway atway eastlay oneway ingstray operandway, enthay ethay
+operationway isway ingstray oncatenationcay.  Otherway ypestay illway ebay autoway-onvertedcay otay
+ypetay ingstray ifway eedednay:
+<pre>
+  Ystemsay.outway.intpray("Ethay umbernay ofway atesstay inway ethay Uway.S. isway " + 50);
+
+  intway idessay = 8;
+  Ystemsay.outway.intlnpray("Umbernay ofway idessay onway away opstay ignsay = " + idessay);
+</pre>
+</li>
+
+</ul>
+
+<h3>Exampleway inkslay</h3>
+
+<ul>
+<li><a href="examples/basics/Example1.java"><tt>Exampleway1.avajay</tt></a>
+ - Illustratesway asicbay onsolecay outputway</li>
+
+<li><a href="examples/basics/Cat.java"><tt>Atcay.avajay</tt></a>
+ - Asicbay ingstray oncatenationcay</li>
+
+<li><a href="examples/basics/Cat2.java"><tt>Atcay2.avajay</tt></a>
+ - Ebay arefulcay aboutway ingstray oncatenationcay vs. egularray useway ofway + operatorway.
+   Ethay orderway ofway operationsway attersmay!</li>
+</ul>
+
+<h3>Ecialspay:  Ormattingfay ithway <tt>intfpray</tt></h3>
+
+<ul>
+<li>Enwhay intingpray aluesvay ithway ecimalday ecisionpray (ypetay <tt>oatflay</tt> orway
+ypetay <tt>oubleday</tt>), itway isway oftenway usefulway otay ebay ableway otay ecifyspay owhay anymay
+ecimalday acesplay ouldshay ebay intedpray</li>
+
+<li>Incesay Avajay 1.5.0, ethay C-ylestay <tt>intfpray</tt> unctionfay ashay eenbay
+availableway, andway itway ovidespray anway easyway ayway otay ormatfay ecimalday ecisionpray</li>
+
+<li>Ormatfay ofway <tt>intfpray</tt> allscay:
+<pre>
+  Ystemsay.outway.intfpray(<i>ormatfay ingstray</i>, <i>istlay ofway arameterspay</i>);
+</pre>
+</li>
+
+<li>Ethay ormatfay ingstray isway away ingstray inway uotesqay, ithway ecialspay ormatfay ymbolssay
+insertedway:
+ <ul>
+ <li><tt>%d</tt> ecifiesspay anway integerway</li>
+ <li><tt>%c</tt> ecifiesspay away aracterchay</li>
+ <li><tt>%s</tt> ecifiesspay away Ingstray</li>
+ <li><tt>%f</tt> ecifiesspay away oatingflay ointpay ypetay</li>
+ </ul>
+</li>
+
+<li>Onsidercay ethay ormatfay ymbolssay otay ebay "illfay-inway-ethay-anksblay" otsspay inway ethay
+ormatfay ingstray.  Esethay areway illedfay inway ithway ethay istlay ofway arameterspay</li>
+
+<li>Exampleway:
+<pre>
+  intway umStudentsnay = 25;
+  archay etterGradelay = A''ay;
+  oubleday agpay = 3.95;
+
+  Ystemsay.outway.intfpray("Erethay areway %d udentsstay\n", umStudentsnay);
+  Ystemsay.outway.intfpray("Obby'sbay oursecay adegray asway %c, andway ishay AgPay isway %f\n",
+                    etterGradelay, agpay);
+
+  // Ethay outputway omfray isthay exampleway isway:
+  //   Erethay areway 25 udentsstay
+  //   Obby'sbay oursecay adegray asway Away, andway ishay AgPay isway 3.950000
+</pre>
+</li>
+
+<li>Otay ecifyspay owhay anymay ecimalday acesplay orfay ethay outputway ofway away oatingflay ointpay
+aluevay, odifymay ethay <tt>%f</tt> ymbolsay inway isthay ormatfay:
+<pre>
+  %<b>.N</b>f  // erewhay N isway ethay umbernay ofway ecimalday acesplay otay intpray
+</pre>
+</li>
+
+<li>Exampleway:
+<pre>
+  oubleday agpay = 3.275;
+  oubleday Ipay = 3.1415;
+
+  Ystemsay.outway.intfpray("agpay = %.2f", agpay);
+  Ystemsay.outway.intfpray("Ipay = %.3f", Ipay);
+
+  // Outputway isway:
+  //    agpay = 3.28
+  //    Ipay = 3.142
+</pre>
+</li>
+
+</ul>
+
+<hr>
+
+<h2>Onsolecay Inputway</h2>
+
+<ul>
+<li>Eforebay Avajay ersionvay 1.5.0, onsolecay inputway asway arderhay.  Incesay 1.5.0, eway
+avehay ethay <tt>Annerscay</tt> assclay</li>
+
+<li>assclay
+<a href="http://java.sun.com/javase/6/docs/api/java/util/Scanner.html">
+<tt>Annerscay</tt></a> isway away exttay arserpay. Ontainscay easyway
+ethodsmay orfay abbinggray ifferentday ypestay ofway inputway</li>
+
+<li><tt>Ystemsay.inway</tt> isway anway <tt>InputStreamway</tt> objectway atthay epresentsray
+andardstay inputway</li>
+
+<li>Otay useway Annerscay otay eadray omfray andardstay inputway...
+ <ol>
+ <li>Utpay ethay appropriateway <tt>importway</tt> atementstay atway ethay optay ofway ethay
+ ilefay: <pre>importway avajay.utilway.Annerscay;</pre></li>
+ <li>Eatecray away <tt>Annerscay</tt> objectway</li>
+ <li>Asspay inway <tt>Ystemsay.inway</tt> intoway ethay <tt>Annerscay</tt> onstructorcay,
+     enwhay eatingcray ethay objectway</li>
+ </ol>
+</li>
+
+<li>Exampleway:
+<pre>
+  importway avajay.utilway.Annerscay;
+  // addayay addayay
+
+  Annerscay inputway = ewnay Annerscay(Ystemsay.inway);
+
+  // ownay eway ancay useway ethay objectway otay eadray ataday omfray ethay eyboardkay.
+  // Omesay amplesay allscay:
+  intway x = inputway.extIntnay();
+  oubleday y = inputway.extDoublenay();
+  Ingstray s = inputway.extnay();
+</pre>
+</li>
+
+</ul>
+
+<h3>Examplesway:</h3>
+
+<ul>
+<li><a href="examples/basics/ConsoleInput1.java">
+    <tt>OnsoleInputcay1.avajay</tt></a>
+ - Away ogrampray emonstratingday implesay Iway/Oway ithway integersway andway ingsstray</li>
+
+<li><a href="examples/basics/Arithmetic.java"><tt>Arithmeticway.avajay</tt></a>
+ - Illustratesway omesay inputway andway ethay arithmeticway operationsway</li>
+
+<li><a href="examples/basics/Functions1.java"><tt>Unctionsfay1.avajay</tt></a>
+ - Illustratesway omesay inputway andway away ewfay aticstay unctionsfay</li>
+
+</ul>
+
+<hr>
+
+
+
+
+</body>
+</html>
